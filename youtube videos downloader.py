@@ -20,10 +20,12 @@ video.register_on_complete_callback(finish()) #calling the confrimation function
 # For Downloading a playlist:
 
 from pytube import Playlist
-Playlist_link = " " # the playlist link
+
+Playlist_link =input("Enter the playlist url") # the playlist link
 Playlist = Playlist(Playlist_link)
+Playlist_path = input("Enter the playlist path")
 for video in Playlist.videos:
-    video.streams.get_highest_resolution().download(output_path=" the playlist link")
+    video.streams.get_highest_resolution().download(output_path=Playlist_path)
 #or
   # video.streams.get_lowest_resolution().download(output_path="  ") for low resolution
 
