@@ -26,7 +26,8 @@ Playlist = Playlist(Playlist_link)
 Playlist_path = input("Enter the playlist path")
 for video in Playlist.videos:
     video.streams.get_highest_resolution().download(output_path=Playlist_path)
+    video.register_on_complete_callback(finish()) #calling the confrimation function
 #or
-  # video.streams.get_lowest_resolution().download(output_path="  ")   #for low resolution
+  # video.streams.get_lowest_resolution().download(output_path="  ") # for low resolution
 
 
